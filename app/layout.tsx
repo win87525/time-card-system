@@ -26,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-screen-lg w-full mx-auto max-h-screen-lg min-h-[80vh] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-3xl shadow-md border-2 border-yellow-400`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full h-screen bg-darkblue`}
       >
-        <Header />
-        {children}
+        <div className="w-[80%] max-w-[1440px] h-[85vh] rounded-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-lowBlue-liner after:z-[-1] after:opacity-80 after:blur-3xl">
+          <Header />
+          <div className="w-full p-5 pl-0">{children}</div>
+        </div>
       </body>
     </html>
   );
